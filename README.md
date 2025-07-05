@@ -25,14 +25,6 @@ A sleek, full-stack personal budgeting tool that lets you track transactions, se
 
 ---
 
-## 📸 Screenshots
-
-| Dashboard | Category Breakdown | Budget vs Spent |
-|----------|---------------------|-----------------|
-| ![Dashboard](./public/screenshot-dashboard.png) | ![Pie](./public/screenshot-pie.png) | ![Bar](./public/screenshot-bar.png) |
-
----
-
 ## 📦 Installation & Setup
 
 1. **Clone the repo**
@@ -66,24 +58,5 @@ arduino
 Copy
 Edit
 http://localhost:3000
-🌐 Folder Structure
-bash
-Copy
-Edit
-/app
-  /api
-    /transactions     → transaction CRUD APIs
-    /budgets          → budget APIs
-  /components         → reusable UI components
-  /lib
-    db.ts             → MongoDB connection
-    models.ts         → Mongoose models
-✨ Upcoming Features
- Edit transactions
 
- Budget history & trend tracking
-
- User authentication (optional)
-
- Export to CSV
 
