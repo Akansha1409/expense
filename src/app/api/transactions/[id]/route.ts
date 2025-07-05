@@ -2,15 +2,11 @@ import { connectDB } from '@/lib/db';
 import { Transaction } from '@/lib/models';
 import { NextResponse } from 'next/server';
 
-export async function DELETE(_: Request, { params }: { params: { id: string } }) {
+export async function PUT(req: Request, context: { params: { id: string } }) {
   await connectDB();
-  const deleted = await Transaction.findByIdAndDelete(params.id);
-  return NextResponse.json(deleted);
-}
+  const { id } = context.params;
+  const data = await req.json();
 
-export async function PUT(req: Request, { params }: { params: { id: string } }) {
-  await connectDB();
-  const body = await req.json();
-  const updated = await Transaction.findByIdAndUpdate(params.id, body, { new: true });
+  const updated = await Transaction.findByIdAndUpdate(id, data, { new: true });
   return NextResponse.json(updated);
 }
