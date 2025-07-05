@@ -1,12 +1,16 @@
 import { connectDB } from '@/lib/db';
 import { Transaction } from '@/lib/models';
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
+export async function GET() {
   await connectDB();
-  const { id } = params;
-  const data = await req.json();
+  const data = await Transaction.find({}).sort({ date: -1 });
+  return NextResponse.json(data);
+}
 
-  const updated = await Transaction.findByIdAndUpdate(id, data, { new: true });
-  return NextResponse.json(updated);
+export async function POST(req: NextRequest) {
+  await connectDB();
+  const body = await req.json();
+  const newTransaction = await Transaction.create(body);
+  return NextResponse.json(newTransaction);
 }
