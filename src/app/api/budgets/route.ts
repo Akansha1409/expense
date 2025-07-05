@@ -1,6 +1,6 @@
 import { connectDB } from '@/lib/db';
 import { Budget } from '@/lib/models';
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 
 export async function GET() {
   await connectDB();
@@ -8,7 +8,7 @@ export async function GET() {
   return NextResponse.json(data);
 }
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   await connectDB();
   const body = await req.json();
   const newBudget = await Budget.create(body);
