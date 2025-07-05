@@ -1,6 +1,6 @@
 import { connectDB } from '@/lib/db';
 import { Transaction } from '@/lib/models';
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
 export async function PUT(req: Request, context: { params: { id: string } }) {
   await connectDB();
