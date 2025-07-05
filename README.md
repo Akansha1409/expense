@@ -33,30 +33,5 @@ A sleek, full-stack personal budgeting tool that lets you track transactions, se
    cd expense-tracker-app
 Install dependencies
 
-bash
-Copy
-Edit
-npm install
-# or
-yarn install
-Configure environment variables
-Create a .env.local file:
-
-env
-Copy
-Edit
-MONGODB_URI="mongodb+srv://<username>:<password>@cluster0.mongodb.net/?retryWrites=true&w=majority"
-Run the development server
-
-bash
-Copy
-Edit
-npm run dev
-Visit the app
-
-arduino
-Copy
-Edit
-http://localhost:3000
 
 
